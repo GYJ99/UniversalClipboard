@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <title>万能复制粘贴板</title> -->
+  <link rel="stylesheet" href="../css/sidepanel.css">
+</head>
+<body class="sidepanel-mode">
+  <div class="container">
+    <header class="sidepanel-header">
+      <h1>万能复制粘贴板</h1>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="搜索内容...">
+        <button id="clear-all-btn" title="清空全部">清空全部</button>
+      </div>
+    </header>
+    
+    <div id="welcome-tip" class="welcome-tip">
+      <p>👋 欢迎使用侧边栏模式！现在你可以边浏览网页边使用复制粘贴板了。</p>
+      <p>复制的内容会自动记录，你还可以使用快捷键 <kbd>Ctrl+Shift+U</kbd> 随时打开此面板。</p>
+      <button id="close-tip-btn">知道了</button>
+    </div>
+    
+    <div class="clipboard-list" id="clipboard-list">
+      <!-- 这里将通过JS动态填充剪贴板项 -->
+      <div class="empty-state">加载中...</div>
+    </div>
+    
+    <template id="clipboard-item-template">
+      <div class="clipboard-item">
+        <div class="clipboard-content">
+          <!-- 富文本内容将在这里显示 -->
+          <div class="content-preview"></div>
+        </div>
+        <div class="clipboard-meta">
+          <div class="clipboard-time"></div>
+          <div class="clipboard-copy-count">复制次数: <span></span></div>
+        </div>
+        <div class="clipboard-actions">
+          <button class="copy-btn" title="复制">复制</button>
+          <button class="paste-btn" title="粘贴">粘贴</button>
+          <button class="delete-btn" title="删除">删除</button>
+        </div>
+      </div>
+    </template>
+  </div>
+  
+  <script src="../js/sidepanel.js"></script>
+</body>
+</html> 
